@@ -1,13 +1,35 @@
   <html>
         <head>
             <title>Käayi</title>
+            
         </head>
-        <h1><em><strong>Hecho para ti </strong> </h1>
+        <h1><em><a href="/"><strong>Hecho para ti </strong></a></h1>
+
         <h4>...pensando en ti</em></h4>
+
         <body>
+         
+       
+        <div>
             <p><strong>Hi </strong>  there!</p>
+        </div>
+        
+
+ 		{% for post in posts %}
+ 			<div>
+ 				<p>published: {{post.published_date}}</p>
+ 				<h2><a href="">{{ post.title }} </a></h2>
+ 				<p>{{ post.text|linebreaks }}</p>
+        	</div>
+        {% endfor %}
+
+
+        <div>
             <p>It works! visit us <a href="https://www.facebook.com/gonzalo.avileziglecias">nuestra tienda</a></p>
+		</div>
+
 			<ul><li>first one</li><li>second one</li></ul>
 
         </body>
+
     </html>
