@@ -29,6 +29,8 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# .auth provides Django with access to the authentication system
+# .contenttypes is used by the authentication application to track models installed in your database
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -50,9 +52,13 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'mysite.urls'
+LOGIN_URL = '/blog/login/'
 
 TEMPLATES = [
     {

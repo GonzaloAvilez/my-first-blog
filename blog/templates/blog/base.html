@@ -13,8 +13,16 @@
               
         <body>
         <div class="page-header">
-             <a href="{% url 'blog.views.post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
+             <a href="{% url 'blog.views.post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> <h6>editame</h6></a>
+             <a href="{% url 'blog.views.register' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span><h6>Regístrate</h6></a>
              <h1><a href="/"><strong>Hecho para ti </strong><h4>...pensando en ti</h4></a></h1>
+             <br><a href="/blog/login/">Login</a>
+             {% if user.is_authenticated %}
+                <h6 class="top-menu">Bienvenido {{ user.username }}!</h6>
+                {% else %}
+                <h1>Rango says... hello world!</h1>
+             {% endif %}
             
         </div>
         <div class="content container">
