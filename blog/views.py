@@ -13,9 +13,6 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
-
-# Create your views here.
-
 def post_list(request):
 		posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
         	return render(request, 'blog/post_list.html', {'posts':posts})
